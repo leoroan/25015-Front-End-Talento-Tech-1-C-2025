@@ -93,7 +93,7 @@ main section h2 {
   margin-bottom: 1rem;
   color: #1565c0;
   text-align: center;
-  font-family: 'Space+Mono', monospace;  
+  font-family: 'Space+Mono', monospace;
 }
 
 main section p {
@@ -211,4 +211,93 @@ footer a:hover {
 
 ul {
   list-style: none;
+}
+
+
+/* tablets*/
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  main section {
+    padding: 1rem;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer .section {
+    text-align: center;
+  }
+}
+
+/* telefonos */
+@media (max-width: 480px) {
+  header img {
+    width: 50px;
+    height: 50px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    gap: 0.9rem;
+    flex-direction: row;
+  }
+
+  main section h2 {
+    font-size: 1.5rem;
+  }
+
+  main section p {
+    font-size: 1rem;
+  }
+
+  main section img {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+  }
+
+  main section video {
+    height: auto;
+  }
+
+  button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  footer {
+    padding: 0.5rem;
+
+  }
+  
+  footer .section {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    gap: 0.5rem;
+  }
 }

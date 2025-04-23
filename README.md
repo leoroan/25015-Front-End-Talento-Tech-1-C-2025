@@ -49,4 +49,5 @@ En la carpeta `others` se encuentran los siguientes archivos PDF del material Am
 - [Clase 04](./others/Clase%2004.pdf)
 - [Clase 05](./others/Clase%2005.pdf)
 - [Clase 06](./others/Clase%2006.pdf)
+- [Clase 07](./others/Clase%2007.pdf)
 
