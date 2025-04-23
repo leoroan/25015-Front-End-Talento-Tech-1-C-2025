@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contáctame!</title>
+  <link rel="shortcut icon" href="../../public/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/contacto.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <img src="../../public/assets/images/astronauta.png" alt="Astronauta mirando hacia la derecha"
+      style="width: 100px; height: auto;">
+    <h1>Vamos a hacer contacto!</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="../../public/index.html">Inicio</a></li>
+      <li><a href="">Nosotros</a></li>
+      <li><a href="">Productos</a></li>
+      <li><a href="">Servicios</a></li>
+      <li><a href="">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <form action="https://formspree.io/f/mblojzkl" method="POST">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+
+
+
+  <script src="../src/index.js" type="module"></script>
+</body>
+
+</html>
