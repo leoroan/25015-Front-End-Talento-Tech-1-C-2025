@@ -38,3 +38,11 @@ ___
 ├── .gitignore             # Archivos y carpetas ignorados por Git
 ├── README.md              # Documentación del proyecto
 ```
+
+### Archivos PDF:
+
+En la carpeta `others` se encuentran los siguientes archivos PDF del material Ampliatorio del curso:
+
+- [documento1.pdf](./others/Clase%2001.pdf)
+- [documento2.pdf](./others/Clase%2002.pdf)
+- [documento3.pdf](./others/Clase%2003.pdf)
