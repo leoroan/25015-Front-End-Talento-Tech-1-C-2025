@@ -43,6 +43,10 @@ ___
 
 En la carpeta `others` se encuentran los siguientes archivos PDF del material Ampliatorio del curso:
 
-- [documento1.pdf](./others/Clase%2001.pdf)
-- [documento2.pdf](./others/Clase%2002.pdf)
-- [documento3.pdf](./others/Clase%2003.pdf)
+- [Clase 01](./others/Clase%2001.pdf)
+- [Clase 02](./others/Clase%2002.pdf)
+- [Clase 03](./others/Clase%2003.pdf)
+- [Clase 04](./others/Clase%2004.pdf)
+- [Clase 05](./others/Clase%2005.pdf)
+- [Clase 06](./others/Clase%2006.pdf)
+

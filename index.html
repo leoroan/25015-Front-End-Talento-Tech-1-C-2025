@@ -8,7 +8,12 @@
   <title>Un sitio web particular</title>
   <link rel="shortcut icon" href="./public/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./src/styles/global.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -22,7 +27,7 @@
     <ul>
       <li><a href="#" visibility: hidden>Inicio</a></li>
       <li><a href="">Nosotros</a></li>
-      <li><a href="">Productos</a></li>
+      <li><a href="./src/pages/productos.html">Productos</a></li>
       <li><a href="">Servicios</a></li>
       <li><a href="./src/pages/contacto.html">Contacto</a></li>
     </ul>
@@ -30,21 +35,33 @@
 
   <main>
     <section>
+      <h2> Bienvenido al Espacio </h2>
+      <p>Explora nuestra tienda galáctica y encuentra productos de otro mundo. ¡Haz que tu vida sea tan increíble como el universo!</p>
+    </section>
+    <section>
       <img src="./public/assets/images/galaxia.jpg" alt="Imagen de una galaxia">
-
       <video controls autoplay poster="./public/assets/images/poster_video1.png">
         <source src="./public/assets/videos/video1.mp4" type="video/mp4">
         Tu navegador no soporta la reproducción de videos.
       </video>
-
     </section>
   </main>
 
 
   <footer>
-    <p>Leandro Maselli</p>
-    <p>2025</p>
-    <p>La Plata, Bs. As. Argentina @Talento-Tech-Full-Stack-Front-End-COM25015</p>
+    <section>
+      <p>Desarrollado por Leandro Maselli <em>@MySelfProductions</em></p>
+      <p>2025</p>
+      <p>La Plata, Bs. As. Argentina @Talento-Tech-Full-Stack-Front-End-COM25015</p>
+    </section>
+    <section>
+      <ul>
+        <li><a href="https://www.facebook.com" target="_blank"><i class="bi bi-facebook"></i></a></li>
+        <li><a href="https://www.instagram.com" target="_blank"><i class="bi bi-instagram"></i></a></li>
+        <li><a href="https://www.linkedin.com" target="_blank"><i class="bi bi-linkedin"></i></a></li>
+        <li><a href="https://github.com" target="_blank"><i class="bi bi-github"></i></a></li>
+      </ul>
+    </section>
   </footer>
 
   <script src="./src/index.js" type="module"></script>

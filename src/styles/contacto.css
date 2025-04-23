@@ -5,6 +5,8 @@ form {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
+  border-bottom: 2px solid #90caf9;
+  border-right: 2px solid #90caf9;
   background-color: #f9f9f9;
   font-family: Arial, sans-serif;
 }
