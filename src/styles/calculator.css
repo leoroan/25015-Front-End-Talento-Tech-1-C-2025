@@ -1,0 +1,35 @@
+.calculator-card {
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calc-btn {
+    height: 60px;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.display {
+    height: 80px;
+    font-size: 2rem;
+    background-color: #f8f9fa;
+    text-align: right;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.operator-btn {
+    background-color: #6c757d;
+    color: white;
+}
+
+.equals-btn {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.clear-btn {
+    background-color: #dc3545;
+    color: white;
+}
