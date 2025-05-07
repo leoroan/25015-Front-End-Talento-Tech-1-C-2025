@@ -1,3 +1,5 @@
+console.log('Hello there!!');
+
 let displayValue = '0';
 const display = document.getElementById('display');
 
