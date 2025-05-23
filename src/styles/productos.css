@@ -41,3 +41,29 @@
   border: 2px solid #0056b3;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.item img {
+  width: 100%;
+  max-width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  background: #fff;
+  transition: transform 0.3s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.item:hover img {
+  transform: scale(1.08);
+}
