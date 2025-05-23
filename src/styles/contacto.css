@@ -9,6 +9,10 @@ form {
   border-right: 2px solid #90caf9;
   background-color: #f9f9f9;
   font-family: Arial, sans-serif;
+  background-image: url('../../public/assets/images/letsMakeContact.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 form h2 {
@@ -56,9 +60,55 @@ form button:hover {
   background-color: #0056b3;
 }
 
-form {
-  background-image: url('../../public/assets/images/letsMakeContact.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+/* Responsive styles */
+@media (max-width: 768px) {
+  form {
+    max-width: 95%;
+    padding: 15px;
+    background-size: cover;
+  }
+  form h2 {
+    font-size: 1.3rem;
+  }
+  form input[type="text"],
+  form input[type="email"],
+  form textarea {
+    font-size: 13px;
+    padding: 8px;
+  }
+  form button {
+    font-size: 15px;
+    padding: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  form {
+    max-width: 100%;
+    padding: 10px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    background-position: right;
+  }
+  form h2 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+  form label {
+    font-size: 0.95rem;
+  }
+  form input[type="text"],
+  form input[type="email"],
+  form textarea {
+    font-size: 12px;
+    padding: 7px;
+  }
+  form textarea {
+    min-height: 70px;
+  }
+  form button {
+    font-size: 14px;
+    padding: 8px;
+  }
 }
