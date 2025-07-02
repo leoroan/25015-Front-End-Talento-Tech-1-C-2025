@@ -60,9 +60,35 @@ document.addEventListener('click', function (event) {
 
 const productosContainer = document.getElementById('productosContainer');
 
-fetch('https://65ad277dadbd5aa31be03afc.mockapi.io/products/ ')
+function mostrarSpinner() {
+  productosContainer.innerHTML = `
+    <div class="d-flex justify-content-center align-items-center" style="height: 100px;">
+      <div class="spinner-border text-info" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div> 
+      <p class="text-info ms-3">trayendo productos...</p>
+    </div>
+  `;
+}
+
+mostrarSpinner();
+
+// Usamos una promesa para asegurar el tiempo mínimo de 1.5s
+const fetchProductos = fetch('https://65ad277dadbd5aa31be03afc.mockapi.io/products/ ')
   .then(response => response.json())
-  .then(data => {
+  .catch(error => {
+    console.error('Error:', error);
+    return []; // Devolvemos array vacío en caso de error
+  });
+
+// Forzamos que pasen al menos 1.5 segundos
+Promise.all([
+  fetchProductos,
+  new Promise(resolve => setTimeout(resolve, 1500))
+]).then(([data]) => {
+  if (data.length === 0) {
+    productosContainer.innerHTML = '<p class="text-center">No se pudieron cargar los productos 😢</p>';
+  } else {
     productosContainer.innerHTML = '';
     data.forEach(producto => {
       productosContainer.innerHTML += productCard(
@@ -74,11 +100,8 @@ fetch('https://65ad277dadbd5aa31be03afc.mockapi.io/products/ ')
         producto.imagen
       );
     });
-  })
-  .catch(error => {
-    productosCarritoContainer.innerHTML = '<p>No se pudieron cargar los productos 😢</p>';
-    console.error('Error:', error);
-  });
+  }
+});
 
 function actualizarCarritoCantidad() {
   const carritoCantidad = document.getElementById('carritoCantidad');
@@ -105,13 +128,15 @@ function renderizarCarrito() {
   if (!productosCarritoContainer || productosCarritoContainer.style.display === 'none') return;
 
   if (cart.length === 0) {
-    productosCarritoContainer.innerHTML = '<p>El carrito está vacío.</p>';
+    productosCarritoContainer.innerHTML = '<p class="text-danger">El carrito está vacío.</p>';
     return;
   }
 
   let tabla = `
-    <table class="table">
-      <thead>
+  <div class="table-responsive">
+    <table class="table table-sm table-striped">
+    <caption>Productos en el carrito</caption>
+      <thead class="table-light">
         <tr>
           <th>Título</th>
           <th>Precio</th>
@@ -120,26 +145,32 @@ function renderizarCarrito() {
         </tr>
       </thead>
       <tbody>
+  </div>
   `;
 
   cart.forEach(item => {
     const subtotal = item.precio * item.cantidad;
     tabla += `
       <tr>
-        <td>${item.titulo}</td>
-        <td>$${item.precio}</td>
-        <td>${item.cantidad}</td>
-        <td>$${subtotal.toFixed(2)}</td>
-      </tr>
-    `;
+      <td>${item.titulo}</td>
+      <td>$${item.precio}</td>
+      <td>${item.cantidad}</td>
+      <td>$${subtotal.toFixed(2)}</td>
+      <td>
+        <button class="btn btn-sm btn-outline-danger btn-reducir-cantidad" data-id="${item.id}" title="Reducir cantidad" id="btn-reducir-cantidad">
+          <i class="bi bi-dash"></i>
+        </button>
+      </td>
+    </tr>
+  `;
   });
 
   tabla += `
-      </tbody>
+    </tbody>
     </table>
     <div class="d-flex gap-2">
-      <button id="vaciarCarrito" class="btn btn-danger">Vaciar carrito</button>
-      <button id="simularCompra" class="btn btn-success">Simular compra</button>
+      <button id="vaciarCarrito" class="btn btn-danger btn-sm">Vaciar carrito</button>
+      <button id="simularCompra" class="btn btn-success btn-sm">Simular compra</button>
     </div>
   `;
 
@@ -152,6 +183,31 @@ function renderizarCarrito() {
     </div>
   `;
 }
+
+// Mover la función reducirCantidadProducto y el event listener fuera de renderizarCarrito
+function reducirCantidadProducto(id) {
+  const index = cart.findIndex(item => String(item.id) === String(id));
+
+  if (index !== -1) {
+    if (cart[index].cantidad > 1) {
+      cart[index].cantidad -= 1;
+    } else {
+      cart.splice(index, 1);
+    }
+    guardarCarrito();
+    actualizarCarritoCantidad();
+    renderizarCarrito();
+  }
+}
+
+// Evento para reducir cantidad o eliminar producto del carrito (solo se agrega una vez)
+document.addEventListener('click', function (event) {
+  if (event.target.id === 'btn-reducir-cantidad' || (event.target.closest && event.target.closest('#btn-reducir-cantidad'))) {
+    const btn = event.target.closest('#btn-reducir-cantidad');
+    const id = btn.getAttribute('data-id');
+    reducirCantidadProducto(id);
+  }
+});
 
 document.addEventListener('click', function (event) {
   if (event.target.id === 'vaciarCarrito') {
